@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Roque Armando Mauricio</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+
+<header class="cabecalho">
+  <div class="envelope">
+    <a href="index.html" class="logotipo">Roque Armando Mauricio</a>
+    <nav class="navegacao" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Currículo</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html" class="ativo" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="envelope">
+    <h1>Contacto</h1>
+    <p>Preencha o formulário para pedir um orçamento ou esclarecer alguma dúvida. Todos os campos assinalados são obrigatórios.</p>
+
+    <!-- Sem "action"/JS: apenas demonstra a validação nativa do HTML5.
+         Num site real, "action" apontaria para um servidor de envio. -->
+    <form class="formulario" novalidate>
+
+      <fieldset>
+        <legend>Dados pessoais</legend>
+
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required minlength="3" maxlength="80" placeholder="O seu nome">
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="nome@exemplo.com">
+          </div>
+
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" pattern="8[0-9]{8}" placeholder="8XXXXXXXX" required>
+            <p class="nota-campo">9 dígitos, a começar por 8 (ex: 872613543)</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Detalhes do pedido</legend>
+
+        <div class="campo">
+          <label for="servico">Tipo de serviço</label>
+          <select id="servico" name="servico" required>
+            <option value="">— Selecione —</option>
+            <option value="eletricidade">Eletricidade</option>
+            <option value="mecanica">Mecânica</option>
+            <option value="eventos">Protocolo de eventos</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="data">Data preferida de contacto</label>
+            <input type="date" id="data" name="data">
+          </div>
+
+          <div class="campo">
+            <label for="horas">Horas de trabalho estimadas</label>
+            <input type="number" id="horas" name="horas" min="1" max="200" step="1" placeholder="Ex: 8">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="anexo">Anexar CV ou referências (opcional)</label>
+          <input type="file" id="anexo" name="anexo" accept=".pdf,.doc,.docx">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferências de contacto</legend>
+
+        <div class="campo">
+          <span id="rotulo-contacto">Prefere ser contactado por</span>
+          <div class="grupo-opcoes" role="radiogroup" aria-labelledby="rotulo-contacto">
+            <label class="opcao">
+              <input type="radio" name="preferencia" value="telefone" checked>
+              Telefone
+            </label>
+            <label class="opcao">
+              <input type="radio" name="preferencia" value="email">
+              Email
+            </label>
+            <label class="opcao">
+              <input type="radio" name="preferencia" value="whatsapp">
+              WhatsApp
+            </label>
+          </div>
+        </div>
+
+        <div class="campo">
+          <span id="rotulo-disponibilidade">Disponibilidade</span>
+          <div class="grupo-opcoes" aria-labelledby="rotulo-disponibilidade">
+            <label class="opcao">
+              <input type="checkbox" name="disponibilidade" value="manha">
+              Manhã
+            </label>
+            <label class="opcao">
+              <input type="checkbox" name="disponibilidade" value="tarde">
+              Tarde
+            </label>
+            <label class="opcao">
+              <input type="checkbox" name="disponibilidade" value="noite">
+              Noite
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mensagem</legend>
+        <div class="campo">
+          <label for="mensagem">A sua mensagem</label>
+          <textarea id="mensagem" name="mensagem" required minlength="10" maxlength="600" placeholder="Descreva o serviço pretendido..."></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="botao-enviar">Enviar mensagem</button>
+    </form>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="envelope">
+    <div class="contactos">
+      <p>872613543 / 834534446</p>
+      <p><a href="mailto:roque.mauricio@exemplo.co.mz">roque.mauricio@exemplo.co.mz</a></p>
+    </div>
+    <p class="assinatura">Desenvolvido por Roque Armando Mauricio</p>
+  </div>
+</footer>
+
+</body>
+</html>
